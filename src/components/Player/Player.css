@@ -1,12 +1,39 @@
 .Player {
-    color: black;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  box-sizing: border-box;
+  width: 750px;
+  border-bottom: 3.2px solid #97c4f1;
+  background-color: #d9eff8;
 }
 .Player__name {
-    color: black;
+    font-size: 22px;
+    color: #1b67b3;
+    padding: 10px;
+    width: 100px;
 }
 .Player__score {
     color: black;
+    font-size: 20px;
+    font-weight: 600;
+    padding: 8px;
+    margin-right: 8px;
 }
 .Player__button {
+    font-size: 20px;
+    font-weight: 900;
     color: black;
+    padding: 5px;
+    height: 20px;
+    cursor: pointer;
+}
+.Player__button-remove {
+    font-size: 20px;
+    font-weight: 900;
+    color: #e60000;
+    padding: 5px;
+    height: 20px;
+    cursor: pointer;
+    margin-left: 8px;
 }
