@@ -52,6 +52,8 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+        <h1 className="App_title">Scorekeeper</h1>
+        
         <AddPlayer onPlayerAdd={this.onPlayerAdd} />
         <PlayersList players={this.state.players} onScoreUpdate={this.onScoreUpdate} onPlayerRemove={this.onPlayerRemove} />
       </div>

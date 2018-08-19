@@ -1,4 +1,12 @@
 .App {
   color: black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
+.App_title {
+  font-size: 36px;
+  font-weight: 800;
+  margin: 15px auto;
+}
