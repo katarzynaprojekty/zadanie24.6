@@ -14,3 +14,14 @@ it('renders correct name', () => {
   
     expect(playerNameRendered).toEqual(playerNamePassed);
 });
+
+it('should call onPlayerScoreChange with 1 when plus button is clicked', () => {
+    const mockedOnPlayerScoreChange = jest.fn();
+    const playerComponent = shallow(<Player onPlayerScoreChange={mockedOnPlayerScoreChange} />);
+  
+    const plusButton = playerComponent.find('.Player__button');
+  
+    plusButton.simulate('click');
+  
+    expect(mockedOnPlayerScoreChange).toBeCalledWith(1);
+});
