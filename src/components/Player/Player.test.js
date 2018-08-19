@@ -47,4 +47,14 @@ it('renders correct score', () => {
     const playerScoreRendered = Number(playerScore);
     
     expect(playerScoreRendered).toEqual(playerScorePassed);
-  });
+});
+
+it('should call onPlayerRemove when remove button is clicked', () => {
+    const mockedOnPlayerRemove = jest.fn();
+    const playerComponent = shallow(<Player onPlayerRemove={mockedOnPlayerRemove} />);
+    const removeButton = playerComponent.find('.Player__button-remove')
+  
+    removeButton.simulate('click');
+  
+    expect(mockedOnPlayerRemove).toBeCalled();
+})
