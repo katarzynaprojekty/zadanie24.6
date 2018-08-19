@@ -9,14 +9,14 @@ class App extends Component {
 
    this.state = {
      players: [
-       {
-         name: 'Kunegunda',
-         score: 5,
-       },
-       {
-         name: 'Antoś',
-         score: 0,
-       }
+      //  {
+      //    name: 'Kunegunda',
+      //    score: 5,
+      //  },
+      //  {
+      //    name: 'Antoś',
+      //    score: 0,
+      //  }
      ]
    }
  }
