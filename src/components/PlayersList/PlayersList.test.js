@@ -4,7 +4,7 @@ import React from 'react';
 import { shallow } from 'enzyme';
 
 it('renders without crashing', () => {
-  shallow(<PlayersList />);
+  shallow(<PlayersList players={[]} />);
 });
 
 it('renders correct number of players', () => {
