@@ -48,18 +48,21 @@ class App extends Component {
     });
     console.log(this.state.players);
   };
-  
+
 //Brak pomysłu //czy potrzebne?
-  // onPlayerUpdate = (playerIndex) => {
-  //   this.setState({
-  //     players: this.state.players.map((player, index) => {
-  //       if (index === playerIndex) {
-  //         return { ...player};
-  //       }
-  //       return player;
-  //     })
-  //   })
-  // }
+  onPlayerUpdate = (playerIndex, player) => {
+    let filteredList = this.state.players.filter((__, index ) => index !== playerIndex);
+    let changeList = {...player};
+    let filtered = [...filteredList, changeList];
+    this.setState({
+      // players: this.state.players.map((player, index) => {
+      //   if (index === playerIndex) {
+      //     return { ...player};
+      //   }
+      //   return player;
+      players: filtered
+    })  
+  }
 
   render() {
     return (
