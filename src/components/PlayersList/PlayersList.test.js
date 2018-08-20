@@ -47,3 +47,23 @@ it('should call on ScoreUpdate', () => {
   onPlayerScoreChange(5);
   expect(mockedOnScoreUpdate).toBeCalledWith(1, 5);
 });
+
+it('should call on PlayerUpdate', () => {
+  const players = [
+    {
+        name: 'Naomi Nagata',
+        score: 5
+    },
+    {
+        name: 'James Holden',
+        score: 0
+    }
+  ]
+
+  const mockedOnPlayerUpdate = jest.fn();
+  const playerComponent = shallow(<PlayersList players={players} onPlayerUpdate={mockedOnPlayerUpdate} />);
+
+  const expectedPlayersNumber = playerComponent.find(Player).length;
+  
+  expect(expectedPlayersNumber).toEqual(1);
+});
