@@ -1,5 +1,5 @@
 import React from 'react';
-import { shallow} from 'enzyme';
+import { shallow, mount } from 'enzyme';
 import PlayersList from '../src/components/PlayersList/PlayersList';
 import AddPlayer from '../src/components/AddPlayer/AddPlayer';
 import App from './App';
@@ -40,21 +40,24 @@ it('should add a new player to the app', () => {
   expect(players[0].score).toEqual(0);
 });
 
-// it('should remove a player when remove button is clicked', () => {
-//   const appComponent = shallow(<App />);
+it('should remove a player when remove button is clicked', () => {
+  const appComponent = mount(<App />);
 
-//   const players = playersToTest;
-//   appComponent.setState({ players });
+  const players = playersToTest;
+  appComponent.setState({ players });
 
-//   const removeButton = appComponent.find('.Player__button-remove').at(0);
-//   console.log(removeButton); // jest coś źle!!!!!!!!!!!
+  //const removeButton = appComponent.find('.Player__button-remove').at(0).prop('onClick')();
+  const removeButton = appComponent.find('.Player__button-remove');
+  console.log(removeButton);
+  //removeButton.simulate('click');
+  // removeButton.prop('onClick')();
+  removeButton.at(0).simulate('click');
+  // appComponent.update();
 
-//   removeButton.simulate('click');
+  const playersAfterUpdate = appComponent.state('players');
 
-//   const playersAfterUpdate = appComponent.state('players');
+  expect(playersAfterUpdate.length).toEqual(playersToTest.length -1 );
 
-//   expect(playersAfterUpdate.length).toEqual(playersToTest.length -1 );
-
-// });
+});
 
 
