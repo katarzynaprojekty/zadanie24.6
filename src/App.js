@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import PlayersList from './components/PlayersList/PlayersList';
 import AddPlayer from './components/AddPlayer/AddPlayer';
-
+//test
 class App extends Component {
  constructor() {
    super();
